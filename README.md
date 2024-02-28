@@ -1,34 +1,30 @@
 # Requirements
 - PHP 8.3
 
-# Instaltion
+# Installation
 
-- Install vendor
+
 ```bash
 composer install
 ```
 
-- Make .env from .env.example
 ```bash
 copy .env.example to .env
 ```
 
-- Generate APP_KEY
 ```bash
 php artisan key:generate
 ```
 
-- Storage Link
 ```bash
 php artisan storage:link
 ```
 
-- Cache Icons
 ```bash
 php artisan icons:cache
 ```
 
-- Run
+# Run
 ```bash
 php artisan serve
 ```
