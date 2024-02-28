@@ -1,0 +1,18 @@
+models:
+  Blog:
+    title: string
+    slug: string unique
+    content: longtext
+    published_at: nullable timestamp
+    author_id: id foreign:users
+  Gallery:
+    title: string
+    image: string
+    author_id: id foreign:users
+    sort: integer
+  Setting:
+    app_name: string
+    app_description: string
+    app_logo: string
+    app_favicon: string
+

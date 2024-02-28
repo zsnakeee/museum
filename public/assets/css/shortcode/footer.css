@@ -1,0 +1,126 @@
+/*-----------------------------------------------------------------------------------
+  Template Name: Pharaoh  Historical HTML Template.
+  Template URI: #
+  Description: Pharaoh is a unique website template designed in HTML with a simple & beautiful look. There is an excellent solution for creating clean, wonderful and trending material design corporate, corporate any other purposes websites.
+  Author: DevItems
+  Version: 1.0
+-------------------------------------------------------------------------------------*/
+/*
+
+    font-family: 'Roboto', sans-serif;
+
+    font-family: 'Playfair Display', serif;
+
+*/
+/*-----------------------------
+	Footer Default
+------------------------------*/
+
+.footer__wrap {
+  padding-bottom: 128px;
+  padding-top: 130px;
+  position: relative;
+  z-index: 2;
+}
+.ft__deatails p {
+    color: #bbbbbb;
+    font-size: 14px;
+    line-height: 24px;
+}
+.ft__deatails {
+    margin-bottom: 50px;
+    margin-top: 35px;
+}
+.social__icon {
+    display: flex;
+}
+.social__icon li + li {
+    margin-left: 15px;
+}
+.social__icon li a i {
+    border: 1px solid #444;
+    color: #bbbbbb;
+    font-size: 13px;
+    height: 30px;
+    line-height: 28px;
+    text-align: center;
+    transition: all 0.4s ease 0s;
+    width: 30px;
+}
+.social__icon li a:hover i {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #fff;
+    color: #f19100;
+}
+
+.ft__recent__post {
+    display: flex;
+    justify-content: space-between;
+}
+.footer__title {
+    color: #fff;
+    display: inline-block;
+    font-family: Roboto;
+    font-size: 18px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    position: relative;
+    text-transform: capitalize;
+}
+.footer__title::before {
+    background: #f19100 none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+.ft__menu li a {
+    color: #bbbbbb;
+    font-size: 14px;
+    text-transform: capitalize;
+    transition: all 0.3s ease 0s;
+}
+.ft__menu li + li {
+    padding-top: 20px;
+}
+.ft__menu li a:hover {
+    color: #f19100;
+}
+.ft__post__thumb {
+    margin-bottom: 20px;
+}
+.ft__post__list li {
+    color: #bbbbbb;
+    font-size: 13px;
+    text-align: left;
+}
+.ft__post__list li i {
+    color: #f19100;
+    font-size: 13px;
+    padding-right: 20px;
+}
+.ft__post__list li + li {
+    padding-top: 8px;
+}
+
+.copyright {
+    align-items: center;
+    display: flex;
+    height: 52px;
+    justify-content: center;
+}
+.copyright__inner p {
+    color: #bbbbbb;
+    font-size: 14px;
+}
+.copyright__inner p a {
+    color: #bbbbbb;
+    transition: all 0.3s ease 0s;
+}
+.copyright__inner p a:hover {
+    color: #f19100;
+}
+
+

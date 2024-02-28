@@ -1,0 +1,15 @@
+created:
+    - database/factories/BlogFactory.php
+    - database/factories/GalleryFactory.php
+    - database/factories/SettingFactory.php
+    - database/migrations/2024_02_27_150046_create_blogs_table.php
+    - database/migrations/2024_02_27_150047_create_galleries_table.php
+    - database/migrations/2024_02_27_150048_create_settings_table.php
+    - app/Models/Blog.php
+    - app/Models/Gallery.php
+    - app/Models/Setting.php
+models:
+    User: {  }
+    Blog: { title: string, content: longtext, published_at: 'nullable timestamp', author_id: 'id foreign:users', relationships: { hasOne: User } }
+    Gallery: { title: string, image: string, author_id: 'id foreign:users', sort: integer, relationships: { hasOne: User } }
+    Setting: { app_name: string, app_description: string, app_logo: string, app_favicon: string }

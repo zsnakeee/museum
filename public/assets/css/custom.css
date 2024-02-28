@@ -1,0 +1,15 @@
+/*--------------------------------------------------------------
+  Template Name: Pharaoh  Historical HTML Template.
+  Template URI: #
+  Description: Pharaoh is a unique website template designed in HTML with a simple & beautiful look. There is an excellent solution for creating clean, wonderful and trending material design corporate, corporate any other purposes websites.
+  Author: DevItems
+  Version: 1.0
+---------------------------------------------------------------*/
+
+/* ----------------------------------------------------
+	You can put your custom css code here: 
+-------------------------------------------------------*/
+
+a:focus, button:focus, input:focus, select:focus, textarea:focus{
+  outline: none;
+}

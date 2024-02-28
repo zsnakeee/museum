@@ -1,0 +1,291 @@
+/*-----------------------------------------------------------------------------------
+  Template Name: Pharaoh  Historical HTML Template.
+  Template URI: #
+  Description: Pharaoh is a unique website template designed in HTML with a simple & beautiful look. There is an excellent solution for creating clean, wonderful and trending material design corporate, corporate any other purposes websites.
+  Author: DevItems
+  Version: 1.0
+-------------------------------------------------------------------------------------*/
+/*
+    font-family: 'Roboto', sans-serif;
+
+    font-family: 'Playfair Display', serif;
+
+*/
+
+/*----------------------------------------
+  Menu basic style
+------------------------------------------*/
+.header{
+  z-index: 10;
+  position: relative;
+}
+.main__menu {
+  display: flex;
+  justify-content: flex-end;
+}
+.main__menu > li > a {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 36px;
+  position: relative;
+  text-transform: capitalize;
+}
+.main__menu > li {
+  padding: 0 16px;
+  position: relative;
+}
+.main__menu li:last-child{
+  padding-right: 0;
+}
+.logo a{
+  display: block;
+}
+.mainmenu__area {
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 70px;
+  width: 100%;
+}
+.htc-header {
+  position: relative;
+  z-index: 9999;
+}
+.main__menu > li > a::before {
+    background: #f19100 none repeat scroll 0 0;
+    content: "";
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.5s ease 0s;
+    width: 0;
+}
+.main__menu li:hover > a::before {
+    width: 100%;
+}
+
+.main__menu > li:hover > a{
+  color: #f19100;
+}
+
+
+/*-----------------------------------------
+  Sticky  For  Header
+-------------------------------------------*/
+
+.sticky__header.scroll-header {
+  animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
+  background: rgba(0, 0, 0, 0.8) none repeat scroll 0 0;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  left: 0;
+  margin: 0 auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 9999999;
+}
+.sticky__header.scroll-header .logo a {
+  height: 70px;
+  line-height: 70px;
+}
+.sticky__header.scroll-header .main__menu > li > a {
+  height: 70px;
+  line-height: 70px;
+}
+
+.fluid-container.mobile-menu-container {
+  position: relative;
+}
+.mobile-logo {
+  align-items: center;
+  display: flex;
+  height: 52px;
+  left: 0;
+  padding-left: 15px;
+  position: absolute;
+  top: 0;
+  z-index: 2147483647;
+}
+.mobile-logo img {
+  max-height: 25px;
+}
+
+/*-----------------------------
+  Dropdown Menu
+--------------------------------*/
+.main__menu li.drop{
+    position: relative;
+}
+.main__menu li.drop ul.dropdown {
+  background: #ffffff none repeat scroll 0 0;
+  box-shadow: 0 0 0px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
+  left: 0;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  position: absolute;
+  top: 120%;
+  transition: all 0.2s ease-in-out 0s;
+  visibility: hidden;
+  width: 189px;
+  z-index: 999;
+}
+.scroll-header .main__menu li.drop ul.dropdown {
+  top: 120%;
+}
+.scroll-header .main__menu li.drop:hover ul.dropdown {
+  top: 100%;
+}
+.main__menu li.drop:hover ul.dropdown {
+    opacity: 1;
+    visibility: visible;
+    top: 106%;
+}
+.main__menu ul.dropdown li {
+    border-bottom: 1px solid #f4f4f4;
+    display: block;
+}
+.main__menu ul.dropdown li a {
+  background: #ffffff none repeat scroll 0 0;
+  color: #333;
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 12px 20px 12px 25px;
+  text-align: left;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s;
+}
+.main__menu li.drop ul.dropdown li:hover > a {
+    background: #fafafa none repeat scroll 0 0;
+    color: #222222;
+}
+
+/*----------------------------
+  Sub Menu
+---------------------------*/
+
+.main__menu li.drop ul.dropdown li.drop::after {
+  color: #999;
+  content: "";
+  font-family: "Material-Design-Iconic-Font";
+  font-size: 13px;
+  position: absolute;
+  right: 20px;
+  top: 12px;
+  transition: all 0.2s ease-in-out 0s;
+}
+.main__menu li.drop ul.dropdown li.drop{
+  position: relative;
+}
+.main__menu li.drop ul.dropdown li.drop ul.dropdown.smright {
+  border: medium none;
+  right: 100%;
+  top: 0;
+  transition: all 0.3s ease 0s;
+}
+.main__menu li.drop ul.dropdown li.drop ul.dropdown.level2 {
+  border: medium none;
+  left: 100%;
+  top: 20%;
+  transition: all 0.3s ease 0s;
+}
+.main__menu li.drop ul.dropdown li.drop ul.dropdown.level2 {
+    opacity: 0;
+    visibility: hidden;
+}
+.main__menu li.drop ul.dropdown li.drop:hover ul.dropdown.level2 {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+}
+.main__menu li.drop ul.dropdown li.drop ul.dropdown.smright {
+    opacity: 0;
+    visibility: hidden;
+}
+.main__menu li.drop ul.dropdown li.drop ul.dropdown.smright {
+  background: #ffffff none repeat scroll 0 0;
+  left: -100%;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  position: absolute;
+  top: 20%;
+  transition: all 0.3s ease-in-out 0s;
+  visibility: hidden;
+  width: 220px;
+  z-index: 999;
+}
+.main__menu li.drop ul.dropdown li.drop:hover ul.dropdown.smright {
+  left: -100%;
+  opacity: 1;
+  visibility: visible;
+  top: 0;
+}
+
+
+
+
+/*----------------------
+  Header Two
+-----------------------*/
+
+
+.mani_menu_box{
+  position: relative;
+}
+.menu__icon{
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.mani_menu_box .main__menu > li > a {
+  align-items: center;
+}
+.mani_menu_box .main__menu {
+  justify-content: flex-end;
+}
+.mani_menu_box .main__menu__nav {
+  padding-right: 40px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s;
+}
+.mani_menu_box .main__menu__nav.show-menu {
+  padding-right: 60px;
+  opacity: 1;
+  visibility: visible;
+}
+.menu__icon i {
+  color: #fff;
+  font-size: 36px;
+}
+
+.click-menu-open {
+  background-image: url("../../../../public/images/icons/click-menu.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: block;
+  height: 29px;
+  width: 40px;
+}
+.click-menu-close{
+  width: 40px;
+  height: 20px;
+  background-image: url(../../../../public/images/icons/click-menu-close.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: block;
+}
+.header--four .header__inner {
+  align-items: center;
+  display: flex;
+}
+
