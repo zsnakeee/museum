@@ -1,6 +1,35 @@
-## How to setup
+# Requirements
+- PHP 8.3
 
-- git clone https://github.com/zsnakeee/museum.git
-- cd museum
-- php artisan icons:cache
-- php artisan serve
+# Instaltion
+
+- Install vendor
+```bash
+composer install
+```
+
+- Make .env from .env.example
+```bash
+copy .env.example to .env
+```
+
+- Generate APP_KEY
+```bash
+php artisan key:generate
+```
+
+- Storage Link
+```bash
+php artisan storage:link
+```
+
+- Cache Icons
+```bash
+php artisan icons:cache
+```
+
+- Run
+```bash
+php artisan serve
+```
+
