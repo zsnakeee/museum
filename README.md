@@ -1,5 +1,6 @@
 # Requirements
 - PHP 8.3
+- Composer 2.x
 
 # Installation
 
