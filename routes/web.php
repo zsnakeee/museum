@@ -46,5 +46,10 @@ Route::group(
         return view('blog-show', compact('blog'));
     })->name('blog.show');
 
+
+
 });
 
+Route::get('/demo', function () {
+    return view('demo');
+})->name('demo');

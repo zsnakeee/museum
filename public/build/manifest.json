@@ -1,12 +1,26 @@
 {
+  "_RoomEnvironment-DyTTQQmp.js": {
+    "file": "assets/RoomEnvironment-DyTTQQmp.js"
+  },
   "resources/css/app.css": {
     "file": "assets/app-l0sNRNKZ.js",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-CifqVuM1.js",
+    "file": "assets/app-yP7G6WQ5.js",
     "src": "resources/js/app.js",
-    "isEntry": true
+    "isEntry": true,
+    "imports": [
+      "_RoomEnvironment-DyTTQQmp.js"
+    ]
+  },
+  "resources/js/demo.js": {
+    "file": "assets/demo-BQbAWqNj.js",
+    "src": "resources/js/demo.js",
+    "isEntry": true,
+    "imports": [
+      "_RoomEnvironment-DyTTQQmp.js"
+    ]
   }
 }

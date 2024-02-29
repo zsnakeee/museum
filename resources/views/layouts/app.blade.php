@@ -47,6 +47,17 @@
             </style>
         @endif
 
+        <style>
+            body {
+                margin: 0
+            }
+
+            canvas {
+                display: block;
+                margin: auto;
+            }
+        </style>
+
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
 
@@ -73,5 +84,7 @@
         <script src="{{ asset('assets/js/waypoints.min.js') }}"></script>
         <!-- Main js file that contents all jQuery plugins activation. -->
         <script src="{{ asset('assets/js/main.js') }}"></script>
+
+        @stack('js')
     </body>
 </html>

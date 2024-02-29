@@ -19,6 +19,7 @@
                             <li><a href="{{ route('about') }}">{{ __('About') }}</a></li>
                             <li><a href="{{ route('gallery') }}">{{ __('Gallery') }}</a></li>
                             <li><a href="{{ route('blog') }}">{{ __('Blog') }}</a></li>
+                            <li><a href="{{ route('demo') }}">{{ __('Demo') }}</a></li>
                         </ul>
                     </nav>
                 </div>

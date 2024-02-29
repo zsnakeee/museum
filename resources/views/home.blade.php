@@ -44,10 +44,12 @@
                             environment. Users will have the opportunity to delve into the rich history and artistry of
                             Egyptian civilization from the comfort of their own home through their VR headset.') }}</p>
 
-                        <img
-                            src="{{ asset('assets/images/about/5.webp') }}"
-                            alt="about images"
-                            class="mt-5 d-block m-auto">
+                        <canvas></canvas>
+
+{{--                        <img--}}
+{{--                            src="{{ asset('assets/images/about/5.webp') }}"--}}
+{{--                            alt="about images"--}}
+{{--                            class="mt-5 d-block m-auto">--}}
                         <a class="htc__btn btn__theme" href="{{ route('gallery') }}">{{ __('Explore More') }}</a>
                     </div>
                 </div>
@@ -127,4 +129,17 @@
         </div>
     </section>
     <!-- End Our Blog Area -->
+
+
 @endsection
+
+@push('js')
+    <script>
+        // import * as THREE from 'three';
+        // import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+        // import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+        //
+        // const controls = new OrbitControls( camera, renderer.domElement );
+        // const loader = new GLTFLoader();
+    </script>
+@endpush
