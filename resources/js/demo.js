@@ -51,8 +51,8 @@ controls.maxPolarAngle = Math.PI / 2
 
 
 const loader = new GLTFLoader();
-loader.setPath('assets/models/swedish-royal/');
-loader.load('scene.gltf', function (gltf) {
+loader.setPath('assets/models/');
+loader.load('the_great_drawing_room.glb', function (gltf) {
     const model = gltf.scene;
     model.position.set(0.65,-1.02,-0.53);
 
