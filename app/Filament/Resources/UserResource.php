@@ -29,7 +29,7 @@ class UserResource extends Resource
                 TextInput::make('name')
                     ->required(),
                 TextInput::make('email')
-                    ->unique(fn(string $context): bool => $context === 'create')
+                    ->unique(ignoreRecord: true)
                     ->email()
                     ->required(),
                 TextInput::make('password')
