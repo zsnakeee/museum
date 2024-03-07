@@ -12,11 +12,11 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="bradcaump__inner text-center">
-                            <h2 class="bradcaump-title">Our Blogs</h2>
+                            <h2 class="bradcaump-title">{{ __('Our Blogs') }}</h2>
                             <nav class="bradcaump-inner">
-                                <a class="breadcrumb-item" href="{{ url('/') }}">Home</a>
+                                <a class="breadcrumb-item" href="{{ url('/') }}">{{ __('Home') }}</a>
                                 <span class="brd-separetor"><i class="fa fa-angle-right"></i></span>
-                                <span class="breadcrumb-item active">Blogs</span>
+                                <span class="breadcrumb-item active">{{ __('Blogs') }}</span>
                             </nav>
                         </div>
                     </div>
@@ -30,7 +30,7 @@
     <section class="htc__blog__area htc__blog--2 pt--130 pb--130 bg__white">
         <div class="container">
             <div class="section__title text-center">
-                <h2 class="title__line">Our <span class="text--theme">Blog</span></h2>
+                <h2 class="title__line">{{ __('Our') }} <span class="text--theme">{{ __('Blog') }}</span></h2>
             </div>
             <div class="row htc__blog__wrap mt--40 mt-sm--30">
                 @foreach(\App\Models\Blog::all() as $blog)
@@ -55,7 +55,7 @@
                                     <h2><a href="{{ route('blog.show', ['slug' => $blog->slug]) }}">{{ $blog->title }}</a></h2>
                                     <p>{{ Str::limit($blog->content, 200)  }}</p>
                                     <div class="blog__btn--2">
-                                        <a class="read__more__btn" href="{{ route('blog.show', ['slug' => $blog->slug]) }}">read more......</a>
+                                        <a class="read__more__btn" href="{{ route('blog.show', ['slug' => $blog->slug]) }}">{{ __('read more......') }}</a>
                                         <a href="#"><i class="fa fa-thumbs-o-up"></i>0</a>
                                     </div>
                                 </div>

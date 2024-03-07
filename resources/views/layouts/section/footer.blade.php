@@ -15,8 +15,7 @@
                         </div>
                         <div class="ft__deatails">
                             <p>
-                                {{ config('app.name') }} is a virtual reality experience that allows users to explore
-                                the wonders of Egyptian antiquities from the comfort of their own homes.
+                                {{ config('app.name') . ' ' . __('is a virtual reality experience that allows users to explore the wonders of Egyptian antiquities from the comfort of their own homes.')}}
                             </p>
                         </div>
                         <ul class="social__icon">
@@ -31,12 +30,12 @@
                 <!-- Start Single Content -->
                 <div class="col-lg-2 offset-lg-1 col-md-6 col-12 xsmt--40">
                     <div class="footer">
-                        <h2 class="footer__title">Information</h2>
+                        <h2 class="footer__title">{{ __('Information') }}</h2>
                         <div class="footer__content">
                             <ul class="ft__menu">
-                                <li><a href="{{ route('about') }}">about</a></li>
-                                <li><a href="{{ route('gallery') }}">gallery</a></li>
-                                <li><a href="{{ route('blog') }}">blog</a></li>
+                                <li><a href="{{ route('about') }}">{{ __('About') }}</a></li>
+                                <li><a href="{{ route('gallery') }}">{{ __('Gallery') }}</a></li>
+                                <li><a href="{{ route('blog') }}">{{ __('Blog') }}</a></li>
                             </ul>
                         </div>
                     </div>
@@ -45,7 +44,7 @@
                 <!-- Start Single Content -->
                 <div class="col-lg-5 col-12 smmt--30 xsmt--40">
                     <div class="footer">
-                        <h2 class="footer__title">Recent Blogs</h2>
+                        <h2 class="footer__title">{{ __('Recent Blogs') }}</h2>
                         <div class="ft__recent__post" style="justify-content: space-between;">
                             @foreach(\App\Models\Blog::limit(2)->get() as $blog)
                                 <div class="ft__single__post mr-2">
@@ -75,7 +74,7 @@
                 <div class="col-12">
                     <div class="copyright">
                         <div class="copyright__inner">
-                            <p>Copyright
+                            <p>{{ __('Copyright') }}
                                 {{ \Carbon\Carbon::now()->format('Y') }}
                                 <a href="{{ url('/') }}">{{ config('app.name') }}.</a></p>
                         </div>

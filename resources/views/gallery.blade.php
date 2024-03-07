@@ -12,11 +12,11 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="bradcaump__inner text-center">
-                            <h2 class="bradcaump-title">Gallery</h2>
+                            <h2 class="bradcaump-title">{{ __('Gallery') }}</h2>
                             <nav class="bradcaump-inner">
-                                <a class="breadcrumb-item" href="{{ url('/') }}">Home</a>
+                                <a class="breadcrumb-item" href="{{ url('/') }}">{{ __('Home') }}</a>
                                 <span class="brd-separetor"><i class="fa fa-angle-right"></i></span>
-                                <span class="breadcrumb-item active">Gallery</span>
+                                <span class="breadcrumb-item active">{{ __('Gallery') }}</span>
                             </nav>
                         </div>
                     </div>
@@ -31,7 +31,7 @@
         <div class="portfolio__area portfolio__activation--2">
             <div class="container">
                 <div class="section__title text-center">
-                    <h2 class="title__line">Our <span class="text--theme">Gallery</span></h2>
+                    <h2 class="title__line">{{ __('Our') }} <span class="text--theme">{{ __('Gallery') }}</span></h2>
                 </div>
 
                 <div class="row portfolio__wrap portfolio__active--2 mt--70 mt-sm--60">

@@ -12,11 +12,11 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="bradcaump__inner text-center">
-                            <h2 class="bradcaump-title">About Us</h2>
+                            <h2 class="bradcaump-title">{{ __('About Us') }}</h2>
                             <nav class="bradcaump-inner">
-                                <a class="breadcrumb-item" href="{{ route('home') }}">Home</a>
+                                <a class="breadcrumb-item" href="{{ route('home') }}">{{ __('Home') }}</a>
                                 <span class="brd-separetor"><i class="fa fa-angle-right"></i></span>
-                                <span class="breadcrumb-item active">About Us</span>
+                                <span class="breadcrumb-item active">{{ __('About Us') }}</span>
                             </nav>
                         </div>
                     </div>
@@ -40,25 +40,15 @@
                 <div class="col-lg-7 col-12 smmt--30 xsmt--30">
                     <div class="htc__about__content">
                         <div class="htc__about__inner">
-                            <h4 class="">WELCOME TO<span class="text--theme"> {{ config('app.name') }}</span></h4>
+                            <h4 class="">{{ __('Welcome to') }}<span class="text--theme"> {{ config('app.name') }}</span></h4>
                             <div class="about__details mt-0">
-                                <p>Welcome to {{ config('app.name') }}, where we bring ancient Egypt to life through
-                                    the
-                                    immersive power of virtual reality. Our passion for history and technology drives us
-                                    to create captivating experiences that allow users to explore the wonders of
-                                    Egyptian antiquities from the comfort of their own homes.</p>
-                                <p>At {{ config('app.name') }}, we are dedicated to preserving and showcasing the rich
-                                    cultural heritage of Egypt in a way that is both educational and entertaining.
-                                    Through meticulous research and attention to detail, we meticulously recreate
-                                    ancient artifacts within Unreal Engine VR, providing users with an unparalleled
-                                    level of realism and interactivity.</p>
+                                <p>{{ __('Welcome to') }} {{ config('app.name') }}, {{ __('where we bring ancient Egypt to life through the immersive power of virtual reality. Our passion for history and technology drives us to create captivating experiences that allow users to explore the wonders of Egyptian antiquities from the comfort of their own homes.') }}</p>
+                                <p>{{ __('At') }} {{ config('app.name') }}, {{ __('we are dedicated to preserving and showcasing the rich cultural heritage of Egypt in a way that is both educational and entertaining. Through meticulous research and attention to detail, we meticulously recreate ancient artifacts within Unreal Engine VR, providing users with an unparalleled level of realism and interactivity.') }}</p>
 
-                                <p>Join us on a journey through the sands of time as we unlock the mysteries of Egypt's
-                                    past and celebrate its enduring legacy. Experience history like never before
-                                    with {{ config('app.name') }}.</p>
+                                <p>{{ __('Join us on a journey through the sands of time as we unlock the mysteries of Egypt\'s past and celebrate its enduring legacy. Experience history like never beforewith') }} {{ config('app.name') }}.</p>
                             </div>
                             <div class="about__btn">
-                                <a class="htc__btn btn__theme" href="{{ route('gallery') }}">Explore</a>
+                                <a class="htc__btn btn__theme" href="{{ route('gallery') }}">{{ __('Explore') }}</a>
                             </div>
                         </div>
                     </div>
