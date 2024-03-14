@@ -1,0 +1,52 @@
+services:
+    laravel:
+        build: .
+        container_name: laravel
+        working_dir: /var/www
+        volumes:
+            - ./:/var/www
+        environment:
+            - DB_CONNECTION=mysql
+            - DB_HOST=mysql
+            - DB_PORT=3306
+            - DB_DATABASE=museum
+        depends_on:
+            - mysql
+        networks:
+            - app-network
+    mysql:
+        image: mysql:latest
+        container_name: mysql
+        ports:
+            - "3306:3306"
+        volumes:
+            # - ./.docker/mysql/data:/var/lib/mysql # for saving mysql data on my local machine
+            - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql # for running sql script on mysql container start
+        environment:
+            MYSQL_DATABASE: museum
+            MYSQL_ALLOW_EMPTY_PASSWORD: 1
+        networks:
+            - app-network
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: phpmyadmin
+        ports:
+            - "3400:80"
+        depends_on:
+            - mysql
+        networks:
+            - app-network
+    nginx:
+        image: nginx:alpine
+        ports:
+            - "80:80"
+        volumes:
+            - ./docker/nginx/default.conf/:/etc/nginx/conf.d/app.conf
+            - ./:/var/www
+        depends_on:
+            - laravel
+        networks:
+            - app-network
+networks:
+    app-network:
+        driver: bridge

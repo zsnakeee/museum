@@ -1,59 +1,32 @@
-FROM php:8.3-fpm
+FROM php:8.3-fpm as php
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    libbz2-dev \
-    libzip-dev \
-    zip \
-    unzip \
-    sqlite3 \
-    libsqlite3-dev \
-    libcurl4-openssl-dev \
-    libonig-dev \
-    libxml2-dev \
-    pkg-config \
-    libssl-dev \
-    libicu-dev \
-    libcurl4-openssl-dev \
-    libpng-dev \
-    libjpeg-dev \
-    libfreetype6-dev \
-    locales \
-    g++ \
-    zlib1g-dev \
-    libzip-dev \
-    libmagickwand-dev \
-    imagemagick
+WORKDIR /var/www
 
-RUN docker-php-ext-install pdo    
-RUN docker-php-ext-install pdo_mysql
-RUN docker-php-ext-install zip
-RUN docker-php-ext-install fileinfo
-RUN docker-php-ext-install curl
-RUN docker-php-ext-install pdo_sqlite
-RUN docker-php-ext-install intl
-# RUN docker-php-ext-install openssl
+RUN apt-get update -y && apt-get install -y \
+   libicu-dev \
+   libmariadb-dev \
+   libzip-dev unzip zip \
+   zlib1g-dev \
+   libpng-dev \
+   libjpeg-dev \
+   libfreetype6-dev \
+   libjpeg62-turbo-dev \
+   libpng-dev
 
+# PHP Extension
+RUN docker-php-ext-install gettext intl pdo_mysql gd zip opcache
+RUN docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg
 
-# Install Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+COPY . /var/www
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Set working directory
-WORKDIR /var/www/html
-
-# Copy application code
-COPY . .
-
-# Install application dependencies
 RUN composer install --no-dev --optimize-autoloader
-RUN cp .env.example .env
-RUN php artisan key:generate
+
+RUN php artisan cache:clear
+RUN php artisan config:clear
+
 RUN php artisan storage:link
 RUN php artisan icons:cache
 
-
-# Expose port 80 (assuming your Laravel app will run on port 80)
-EXPOSE 80
-EXPOSE 8000
-# Start the PHP server (adjust as per your Laravel setup)
-CMD ["php", "artisan", "serve", "--host=0.0.0.0"]
+EXPOSE 9000
+CMD ["php-fpm"]

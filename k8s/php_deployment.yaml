@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php
+  labels:
+    tier: backend
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: php
+      tier: backend
+  template:
+    metadata:
+      labels:
+        app: php
+        tier: backend
+    spec:
+      containers:
+        - name: php
+          image: museum-laravel:latest
+          imagePullPolicy: Never
+          volumeMounts:
+            - name: app
+              mountPath: /app
+          lifecycle:
+            postStart:
+              exec:
+                command:
+                  - "/bin/sh"
+                  - "-c"
+                  - |
+                    cp -r /var/www/. /app
+                    rm /app/public/storage
+                    ln -s /app/storage/app/public /app/public/storage
+                    chmod -R 777 /app/storage
+                    chmod -R 777 /app/bootstrap/cache
+
+      volumes:
+        - name: app
+          persistentVolumeClaim:
+            claimName: app
+
