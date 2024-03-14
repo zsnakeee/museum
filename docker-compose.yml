@@ -7,7 +7,7 @@ services:
             - ./:/var/www
         environment:
             - DB_CONNECTION=mysql
-            - DB_HOST=mysql
+            - DB_HOST=db
             - DB_PORT=3306
             - DB_DATABASE=museum
         depends_on:

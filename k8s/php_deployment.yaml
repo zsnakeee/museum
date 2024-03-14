@@ -40,4 +40,3 @@ spec:
         - name: app
           persistentVolumeClaim:
             claimName: app
-

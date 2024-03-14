@@ -18,9 +18,14 @@ RUN docker-php-ext-install gettext intl pdo_mysql gd zip opcache
 RUN docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg
 
 COPY . /var/www
+RUN cp .env.example .env
+
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 RUN composer install --no-dev --optimize-autoloader
+
+
+RUN php artisan key:generate
 
 RUN php artisan cache:clear
 RUN php artisan config:clear
