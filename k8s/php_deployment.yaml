@@ -5,7 +5,7 @@ metadata:
   labels:
     tier: backend
 spec:
-  replicas: 5
+  replicas: 1
   selector:
     matchLabels:
       app: php
@@ -23,6 +23,7 @@ spec:
           volumeMounts:
             - name: app
               mountPath: /app
+          command: ["php-fpm"]
           lifecycle:
             postStart:
               exec:
@@ -34,7 +35,7 @@ spec:
                     rm /app/public/storage
                     ln -s /app/storage/app/public /app/public/storage
                     chmod -R 777 /app/storage
-                    chmod -R 777 /app/bootstrap/cache
+                    chmod -R 777 /app/bootstrap/cache                
 
       volumes:
         - name: app
