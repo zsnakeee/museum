@@ -11,5 +11,6 @@ spec:
     tier: backend
   ports:
     - protocol: TCP
-      port: 8000
-      targetPort: 8000
+      port: 9000
+      targetPort: 9000
+      
