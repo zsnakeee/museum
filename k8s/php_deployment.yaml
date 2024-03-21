@@ -18,8 +18,8 @@ spec:
     spec:
       containers:
         - name: php
-          image: museum-laravel:latest
-          imagePullPolicy: Never
+          image: medanyyy/laravel-app:v1
+          # imagePullPolicy: Never
           volumeMounts:
             - name: app
               mountPath: /app
