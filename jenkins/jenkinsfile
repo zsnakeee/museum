@@ -1,10 +1,29 @@
 pipeline {
     agent any
+
+    environment {
+        DOCKER_IMAGE_NAME = 'medanyyy/laravel'
+        DOCKER_CREDENTIALS_ID = 'dockerhub'
+    }
+
     stages {
-        stage('hello') {
+        stage('build') {
             steps {
                 script {
-                    sh 'echo hello minikube'
+                    def DOCKER_IMAGE_TAG = "v${BUILD_TAG}"
+                    sh "docker build -t ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} -f Dockerfile ."
+                }
+            }
+        }
+
+        stage('push') {
+            steps {
+                script {
+                    withCredentials([usernamePassword(credentialsId: DOCKER_CREDENTIALS_ID, usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                        def DOCKER_IMAGE_TAG = "v${BUILD_TAG}"
+                        sh "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}"
+                        sh "docker push ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}"
+                    }
                 }
             }
         }
