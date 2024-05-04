@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('test') {
+        stage('hello') {
             steps {
                 script {
                     sh 'echo hello minikube'
