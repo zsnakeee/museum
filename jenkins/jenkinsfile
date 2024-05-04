@@ -2,15 +2,15 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE_NAME = 'medanyyy/laravel'
+        DOCKER_IMAGE_NAME = 'medanyyy/laravel-app'
         DOCKER_CREDENTIALS_ID = 'dockerhub'
+        DOCKER_IMAGE_TAG = "v:1.${BUILD_NUMBER}"
     }
 
     stages {
         stage('build') {
             steps {
                 script {
-                    def DOCKER_IMAGE_TAG = "v${BUILD_TAG}"
                     sh "docker build -t ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} -f Dockerfile ."
                 }
             }
