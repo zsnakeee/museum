@@ -1,11 +1,11 @@
 pipeline {
     agent any
 
-    stages {
-        stage('Test') {
+        stage('test') {
             steps {
-                echo 'Hello from Jenkins running on Minikube!'
+                script {
+                  sh 'echo hello minikube'
+                }
             }
         }
-    }
 }
