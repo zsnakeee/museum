@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: php
-          image: medanyyy/laravel-app:v1
+          image: medanyyy/laravel-app:v1.12
           # imagePullPolicy: Never
           volumeMounts:
             - name: app
@@ -35,7 +35,7 @@ spec:
                     rm /app/public/storage
                     ln -s /app/storage/app/public /app/public/storage
                     chmod -R 777 /app/storage
-                    chmod -R 777 /app/bootstrap/cache                
+                    chmod -R 777 /app/bootstrap/cache
 
       volumes:
         - name: app
