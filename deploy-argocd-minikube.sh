@@ -12,8 +12,8 @@ echo "--------------------Deploy Argocd--------------------"
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
 #Sleep 1 miniute
-echo "--------------------Waiting 1m for the pods to start--------------------"
-sleep 1m
+echo "--------------------Waiting 5m for the pods to start--------------------"
+sleep 5m
 
 #Change to Nodeport
 echo "--------------------Change Argocd Service to NodePort--------------------"
