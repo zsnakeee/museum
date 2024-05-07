@@ -21,7 +21,7 @@ kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}'
 
 #ArgoCD URL
 echo "--------------------ArgoCD URL--------------------"
-minikube service -n argocd argocd-server --url
+minikube service -n argocd argocd-server --url 
 
 #ArgoCD Pass
 echo "--------------------ArgoCD UI Password--------------------"
