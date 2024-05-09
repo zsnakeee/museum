@@ -20,7 +20,7 @@
             </div>
             <div class="container">
                 <div class="slider__content__3">
-                    <h1>{{ __('Welcome to') }} <br>{{ config('app.name') }}</h1>
+                    <h1>{{ __('Hello to') }} <br>{{ config('app.name') }}</h1>
                     <p>{{ __('Explore ancient Egypt with our Virtual Egyptian Antiquities experience, powered by Unreal Engine
                         VR. Realistic and interactive statues take you on a fun and educational journey through history.
                         Start your adventure from home now!') }}</p>
