@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: php
-          image: medanyyy/laravel-app:v1.1
+          image: medanyyy/laravel-app:v1.2
           # imagePullPolicy: Never
           volumeMounts:
             - name: app
