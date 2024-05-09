@@ -19,7 +19,7 @@ spec:
       containers:
         - name: php
           image: medanyyy/laravel-app:v1.2
-           imagePullPolicy: Always  
+          imagePullPolicy: Always
           volumeMounts:
             - name: app
               mountPath: /app
