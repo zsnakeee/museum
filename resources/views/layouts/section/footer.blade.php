@@ -10,7 +10,7 @@
                     <div class="footer">
                         <div class="ft__logo">
                             <a href="{{ url('/') }}">
-                                <img src="{{ asset('assets/images/logo/pharaoh.png') }}" alt="footer logo">
+                                <img src="{{ asset('assets/images/logo/sphinx.png') }}" alt="footer logo">
                             </a>
                         </div>
                         <div class="ft__deatails">
